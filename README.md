@@ -1,4 +1,4 @@
-# RB3 + Jetson Nano Robotics Project
+# RB3 Color Cube Perception and Grasping
 
 This repository is organized into two main folders:
 
