@@ -12,7 +12,7 @@ Uses a YOLO-based object detection pipeline to detect and classify objects in th
 This ROS2 node performs decision-making based on vision output and sends appropriate control messages to the Jetson Nano.
 
 ## Structure
-```bash
+```
 rb3/
 ├── image_capture/ # Camera interface and image acquisition
 ├── yolo_pipeline/ # YOLO model code and inference logic

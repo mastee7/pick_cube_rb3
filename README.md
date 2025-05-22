@@ -8,7 +8,9 @@ This repository is organized into two main folders:
 Each folder has its own `README.md` for more details.
 
 ## Folder Structure
+```
 .
 ├── rb3/ # Perception and planning
 ├── jetson_nano/ # Motor control and command execution
 └── README.md # Project overview (this file)
+```
