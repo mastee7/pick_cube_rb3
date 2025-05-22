@@ -1,32 +1,49 @@
-# Jetson Nano Codebase
+# RB3 Codebase
 
-This folder contains the control-related code running on Jetson Nano. It is responsible for:
+This folder contains the code that runs on the RB3 board. It includes:
 
-- Receiving commands from the RB3's logic node
-- Sending appropriate signals to actuators (e.g., motors)
+### 1. Image Capture
+Captures real-time video or images using a connected camera.
+
+### 2. Vision Pipeline
+Uses a YOLO-based object detection pipeline to detect and classify objects in the scene.
+
+### 3. Logic Node
+This ROS2 node performs decision-making based on vision output and sends appropriate control messages to the Jetson Nano.
 
 ## Structure
 ```
-jetson_nano/
-├── control_node/ # ROS2 node to receive commands and drive hardware
+rb3/
+├── image_capture/ # Camera interface and image acquisition
+├── yolo_pipeline/ # YOLO model code and inference logic
+├── logic_node/ # ROS2 node that performs decision making
 └── README.md # This file
 ```
-
-## Features
-- Serial communication or direct GPIO motor control
-- Real-time command handling and execution
-- Supports different motor drivers (specify in configs)
 
 ## 🛠 Setup & Run Instructions
 
 ```bash
 export ROS_DOMAIN_ID=42
-cd /home/jetson/recover/ros2_ws
-source /opt/ros/foxy/setup.bash
-colcon build # --packages-select rb3_nano_comm
+cd /home/ubuntu/bin/ros2_ws
+source /opt/ros/humble/setup.bash 
+colcon build 
 source install/setup.bash
-ros2 run rb3_nano_comm nano_sub
+```
+
+Then in a tmux session
+
+```bash
+# Terminal 1
+sh run_camera_node.sh
+# Terminal 2
+sh run_detection_node.sh
+# Terminal 3
+sh run_logic_comm.sh
+```
+
 
 ## Dependencies
-- ROS2 Foxy
-
+- ROS2 Humble
+- OpenCV
+- YOLOv4
+- Python 3.10.12
