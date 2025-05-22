@@ -8,8 +8,15 @@ This folder contains the control-related code running on Jetson Nano. It is resp
 ## Structure
 ```
 jetson_nano/
-├── control_node/ # ROS2 node to receive commands and drive hardware
-└── README.md # This file
+└── README.md
+    └── src
+        └── rb3_nano_comm
+            ├── rb3_nano_comm
+            │   └── nano_subscriber.py
+            ├── resource
+            │   └── rb3_nano_comm
+            ├── setup.cfg
+            └── setup.py
 ```
 
 ## Features
@@ -29,3 +36,4 @@ ros2 run rb3_nano_comm nano_sub
 
 ## Dependencies
 - ROS2 Foxy
+
