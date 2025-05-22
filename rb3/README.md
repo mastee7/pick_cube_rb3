@@ -50,10 +50,8 @@ This ROS2 node performs decision-making based on vision output and sends appropr
 ## 🛠 Setup & Run Instructions
 
 ```bash
-export ROS_DOMAIN_ID=42
-cd /home/ubuntu/bin/ros2_ws
-source /opt/ros/humble/setup.bash
-colcon build
+source /opt/ros/humble/setup.bash 
+colcon build --packages-select  camera_node
 source install/setup.bash
 ```
 
