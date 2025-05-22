@@ -6,9 +6,11 @@ This folder contains the control-related code running on Jetson Nano. It is resp
 - Sending appropriate signals to actuators (e.g., motors)
 
 ## Structure
+```bash
 jetson_nano/
 ├── control_node/ # ROS2 node to receive commands and drive hardware
 └── README.md # This file
+```
 
 ## Features
 - Serial communication or direct GPIO motor control
